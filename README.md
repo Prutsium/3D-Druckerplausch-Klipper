@@ -8,4 +8,5 @@ Please see the wiki for advanced information how we set up Klipper on our Prusa 
 - Klipper Setup on Raspberry and Prusa
 - Restore Prusa firmware
 - Config file description and how includes work
+- 3-Axis tilt module -> resonance etc
 - ...
