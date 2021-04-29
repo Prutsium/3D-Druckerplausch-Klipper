@@ -1,0 +1,322 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable type="interval" id="Intervall">Intervall</variable>
+    <variable id="?+QHE72Hqo01TXF{tQ|+">result</variable>
+    <variable type="timeout" id="ausschalten">ausschalten</variable>
+  </variables>
+  <block type="create" id="uP=EKYmr5/.=StbP[/Tx" x="187" y="-353">
+    <field name="NAME">Prusa_State</field>
+    <next>
+      <block type="create" id="!4!v:)h}!QDS)-|#5Y9N">
+        <field name="NAME">Prusa_State_Before</field>
+        <next>
+          <block type="timeouts_setinterval" id="s]N*0y969CKwDjrxLT;w">
+            <field name="NAME">Intervall</field>
+            <field name="INTERVAL">60</field>
+            <field name="UNIT">sec</field>
+            <statement name="STATEMENT">
+              <block type="request" id=")XHrL!55Ph6;l6HCjW{L">
+                <mutation xmlns="http://www.w3.org/1999/xhtml" with_statement="true"></mutation>
+                <field name="WITH_STATEMENT">TRUE</field>
+                <field name="LOG"></field>
+                <value name="URL">
+                  <shadow type="text" id="c$D^CsCHWkYf^Y.)7,hE">
+                    <field name="TEXT">http://FLUIDDPI-IP:7125/api/printer</field>
+                  </shadow>
+                </value>
+                <statement name="STATEMENT">
+                  <block type="update" id="$iR)+J?`02UrkBNsUsu-">
+                    <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                    <field name="OID">javascript.0.Prusa_State</field>
+                    <field name="WITH_DELAY">FALSE</field>
+                    <value name="VALUE">
+                      <block type="get_attr" id="yTM3v7`~.*VVwa$ylRTS">
+                        <value name="PATH">
+                          <shadow type="text" id="JwNyiY*$9|ZSm08~kd,^">
+                            <field name="TEXT">state.text</field>
+                          </shadow>
+                        </value>
+                        <value name="OBJECT">
+                          <block type="convert_json2object" id="707]7Rdy!uY3~)IR?;33">
+                            <value name="VALUE">
+                              <block type="variables_get" id="~Iz=GD3?3xVs8OYBn0D:">
+                                <field name="VAR" id="?+QHE72Hqo01TXF{tQ|+">result</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+              </block>
+            </statement>
+            <next>
+              <block type="on_ext" id="{zqsdj~5XmX*OKD.MD`R">
+                <mutation xmlns="http://www.w3.org/1999/xhtml" items="1"></mutation>
+                <field name="CONDITION">ne</field>
+                <field name="ACK_CONDITION"></field>
+                <value name="OID0">
+                  <shadow type="field_oid" id="5v8aUbrx?pw3l|)AD{rY">
+                    <field name="oid">javascript.0.Prusa_State</field>
+                  </shadow>
+                </value>
+                <statement name="STATEMENT">
+                  <block type="controls_if" id="U@O6101;Do4FPJKObc^9">
+                    <mutation elseif="2"></mutation>
+                    <value name="IF0">
+                      <block type="logic_compare" id="g,QhuU|IrTO+}#Hp-mAA">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="on_source" id="%WhBSLZ?}3gJgA:S0VS}">
+                            <field name="ATTR">state.val</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="rW55DR=j]Uf*J4ytkA_*">
+                            <field name="TEXT">Operational</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="controls_if" id="@+[Xya*jrV)Yq^^y**!)">
+                        <value name="IF0">
+                          <block type="logic_operation" id="FoKMnY()Tp78^TPXW~~~">
+                            <field name="OP">OR</field>
+                            <value name="A">
+                              <block type="logic_compare" id="FVR9Cws_|z,OTo=(,(H@">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="get_value" id="qx!CjU:=+kumLb2?Z^H%">
+                                    <field name="ATTR">val</field>
+                                    <field name="OID">javascript.0.Prusa_State_Before</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="text" id="[aBTl,_S(D]Aj+2U$o}/">
+                                    <field name="TEXT">Printing from SD</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="logic_compare" id="1Y?5y2?k(ovF[2Rm+;lR">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="get_value" id="ZKhONTTOG|oyu|DNL2hB">
+                                    <field name="ATTR">val</field>
+                                    <field name="OID">javascript.0.Prusa_State_Before</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="text" id="ia-b_x+pi.9,A]N98b(%">
+                                    <field name="TEXT">Printing</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="telegram" id="oKnTv7-ssIXE,~x069yj">
+                            <field name="INSTANCE"></field>
+                            <field name="LOG"></field>
+                            <field name="SILENT">FALSE</field>
+                            <field name="PARSEMODE">default</field>
+                            <value name="MESSAGE">
+                              <shadow type="text" id="/{~,ZzMT,Fuh|fwkX*x:">
+                                <field name="TEXT">text</field>
+                              </shadow>
+                              <block type="text" id="7AbnCOL%JL$fkzfb)0_R">
+                                <field name="TEXT">3D-Druck ist fertig. Schalte Drucker in 5 Minuten ab.</field>
+                              </block>
+                            </value>
+                            <value name="USERNAME">
+                              <block type="text" id="98#yUSa4WvD[vX2!]A!,">
+                                <field name="TEXT">YourName</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="timeouts_settimeout" id="(Fg0kl1/,W?q+f]yN0w^">
+                                <field name="NAME">ausschalten</field>
+                                <field name="DELAY">5</field>
+                                <field name="UNIT">min</field>
+                                <statement name="STATEMENT">
+                                  <block type="control" id="km4Q%uRCAt?Qi}zCf1E5">
+                                    <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                                    <field name="OID">deconz.0.lights.00158d0003884730.on</field>
+                                    <field name="WITH_DELAY">FALSE</field>
+                                    <value name="VALUE">
+                                      <block type="logic_boolean" id="KGJY|l5B4n/R^A-U%i52">
+                                        <field name="BOOL">FALSE</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </statement>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                      </block>
+                    </statement>
+                    <value name="IF1">
+                      <block type="logic_operation" id="jOG:LL^sJJhtAs(DMcm.">
+                        <field name="OP">OR</field>
+                        <value name="A">
+                          <block type="logic_compare" id="e$zb+Z%zW1Pm4]FL=2P}">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="on_source" id=".Zeg(lo]968yMuhl|pB#">
+                                <field name="ATTR">state.val</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="text" id="he^WR#s;]%*lQa]?HO7F">
+                                <field name="TEXT">Printing from SD</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="logic_compare" id="y6UNj`7z=G+q?OwZVOMJ">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="on_source" id="$y9J1MLRj4A5%w5C7KX0">
+                                <field name="ATTR">state.val</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="text" id="OQf$yJB`rw)-RX5.dPo1">
+                                <field name="TEXT">Printing</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO1">
+                      <block type="timeouts_cleartimeout" id="`wJhGxWq.Pg3Et-_5dju">
+                        <field name="NAME">ausschalten</field>
+                        <next>
+                          <block type="telegram" id="%wfmY%;Y5h2pi8ekw;_N">
+                            <field name="INSTANCE"></field>
+                            <field name="LOG"></field>
+                            <field name="SILENT">FALSE</field>
+                            <field name="PARSEMODE">default</field>
+                            <value name="MESSAGE">
+                              <shadow xmlns="http://www.w3.org/1999/xhtml" type="text" id="/{~,ZzMT,Fuh|fwkX*x:">
+                                <field name="TEXT">text</field>
+                              </shadow>
+                              <block type="text" id="i:o+`N`:`P(8QKy6QaJJ">
+                                <field name="TEXT">3D-Druck gestartet.</field>
+                              </block>
+                            </value>
+                            <value name="USERNAME">
+                              <block type="text" id="T;V|G7eC%?I(cc~_n?^u">
+                                <field name="TEXT">Dennis</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <value name="IF2">
+                      <block type="logic_compare" id="o9=CGV;d$J|6:JVf!eDk">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="on_source" id="wD3#O4fCjhO=o[VFr+Wz">
+                            <field name="ATTR">state.val</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="UpUE[$84z^a`z4Fz4,~z">
+                            <field name="TEXT">Error</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO2">
+                      <block type="controls_if" id="-|yI[R@ja|QXG~B8E`8!">
+                        <value name="IF0">
+                          <block type="logic_operation" id="*4x=|daS3ZzOVj.hrN%5">
+                            <field name="OP">OR</field>
+                            <value name="A">
+                              <block type="logic_compare" id="zx80|L1^D7/K8$!u[GXQ">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="get_value" id="`SL!nZnC~[F!)u,2faKi">
+                                    <field name="ATTR">val</field>
+                                    <field name="OID">javascript.0.Prusa_State_Before</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="text" id="OTp;hXfSZj/W9/)YTEG]">
+                                    <field name="TEXT">Printing from SD</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="logic_compare" id="JW{WCb5FCm?=V1r!4DOu">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="get_value" id="~x}J8Tqwl-q/@KR*5d0L">
+                                    <field name="ATTR">val</field>
+                                    <field name="OID">javascript.0.Prusa_State_Before</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="text" id="GI(yB]YAmz7]OFtqZx||">
+                                    <field name="TEXT">Printing</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="telegram" id="Ef=.l|XF1h5/2qYt1*-0">
+                            <field name="INSTANCE"></field>
+                            <field name="LOG"></field>
+                            <field name="SILENT">FALSE</field>
+                            <field name="PARSEMODE">default</field>
+                            <value name="MESSAGE">
+                              <shadow type="text">
+                                <field name="TEXT">text</field>
+                              </shadow>
+                              <block type="text" id="iq~9JNy4op`/n@PbZXsg">
+                                <field name="TEXT">3D-Drucker meldet Fehler!!!</field>
+                              </block>
+                            </value>
+                            <value name="USERNAME">
+                              <block type="text" id="s%Up,yYMxz[7Zgz)K~[o">
+                                <field name="TEXT">Dennis</field>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="control" id="w@L;~ia5B~2lFc(qsZ*,">
+                        <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                        <field name="OID">javascript.0.Prusa_State_Before</field>
+                        <field name="WITH_DELAY">FALSE</field>
+                        <value name="VALUE">
+                          <block type="on_source" id="UV~DSN8PP{G*=(O+u5U#">
+                            <field name="ATTR">state.val</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
