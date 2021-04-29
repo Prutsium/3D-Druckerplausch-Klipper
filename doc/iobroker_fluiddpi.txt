@@ -129,7 +129,7 @@
                                 <field name="TEXT">text</field>
                               </shadow>
                               <block type="text" id="7AbnCOL%JL$fkzfb)0_R">
-                                <field name="TEXT">3D-Druck ist fertig. Schalte Drucker in 5 Minuten ab.</field>
+                                <field name="TEXT">3D-print finished. Switching off your printer in 5 minutes.</field>
                               </block>
                             </value>
                             <value name="USERNAME">
@@ -214,7 +214,7 @@
                             </value>
                             <value name="USERNAME">
                               <block type="text" id="T;V|G7eC%?I(cc~_n?^u">
-                                <field name="TEXT">Dennis</field>
+                                <field name="TEXT">YourName</field>
                               </block>
                             </value>
                           </block>
@@ -286,12 +286,12 @@
                                 <field name="TEXT">text</field>
                               </shadow>
                               <block type="text" id="iq~9JNy4op`/n@PbZXsg">
-                                <field name="TEXT">3D-Drucker meldet Fehler!!!</field>
+                                <field name="TEXT">3D printer has an ERROR!!!</field>
                               </block>
                             </value>
                             <value name="USERNAME">
                               <block type="text" id="s%Up,yYMxz[7Zgz)K~[o">
-                                <field name="TEXT">Dennis</field>
+                                <field name="TEXT">YourName</field>
                               </block>
                             </value>
                           </block>
