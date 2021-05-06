@@ -6,7 +6,9 @@ import argparse
 # device = "/dev/ttyS0"
 # device = "COM4"
 # device = "/dev/ttyAM0"
-device = "/dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0"
+# device = "/dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0"
+device = "/dev/ttyUSB0"
+
 baudrate = 115200
 
 
@@ -14,12 +16,22 @@ class Mmucontrol():
 
 	def __init__(self) -> None:
 		print("MMU class init - Begin")
-		self.connection = serial.Serial(port=serial, baudrate=baudrate, timeout=1)
+		self.connection = serial.Serial(port=device, baudrate=baudrate, timeout=1)
 		if self.connection.isOpen():
 			print("MMU connected.")
 		else:
 			print("MMU not connected.")
 			exit(1)
+		self.check_alive()
+
+	def check_alive(self) -> None:
+		self.connection.write(b'S1\n')
+		version = str(self.connection.readline())
+		print("Got version:", version)
+
+		self.connection.write(b'S2\n')
+		build = str(self.connection.readline())
+		print("Got build number:", build)
 
 	def check_ack(self) -> None:
 		ack = str(self.connection.readline())
@@ -180,7 +192,7 @@ if __name__ == "__main__":
 	elif args.recover:
 		m = Mmucontrol()
 		m.recover()
-	elif args.status:
+	elif args.finda:
 		m = Mmucontrol()
 		m.check_filament()
 	else:
