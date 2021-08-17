@@ -1,0 +1,229 @@
+PinNames
+
+nullptr			},	// PA00 TMC UART TxD
+nullptr			},	// PA01 TMC UART RxD
+"ate.lcd.a0"	},	// PA02 LCD A0
+"ate.sbc.dr"	},	// PA03 SBC data ready
+nullptr			},	// PA04 SBC SPI MISO
+nullptr			},	// PA05 SBC SPI SCLK
+nullptr			},	// PA06 SBC SPI SS
+nullptr			},	// PA07 SBC SPI MOSI
+nullptr			},	// PA08 Neopixel output (QSPI MOSI)
+"are.lcd.buzz"	},	// PA09 LCD buzzer
+"ate.d0.diag"	},	// PA10 driver 0 diag
+"out4"			},	// PA11 OUT4
+nullptr			},	// PA12 Ethernet/WiFi SCLK (SERCOM4.1)
+nullptr			},	// PA13 Ethernet/WiFi MISO (SERCOM4.0)
+nullptr			},	// PA14 Ethernet/WiFi SS (SERCOM4.2)
+nullptr			},	// PA15 Ethernet/WiFi MOSI (SERCOM4.3)
+nullptr			},	// PA16 Ethernet GCLK2 out/WiFi RxD (SERCOM3.1)
+nullptr			},	// PA17 Ethernet/WiFi TxD (SERCOM3.0)
+nullptr			},	// PA18 Ethernet/WiFi ESP_DATA_RDY
+nullptr			},	// PA19 Ethernet/WiFi SAM_TRANSFER_RDY
+nullptr			},	// PA20 SDHC CMD
+nullptr			},	// PA21 SDHC CLK
+"ate.d2.diag"	},	// PA22 driver 2 diag
+"ate.d3.diag"	},	// PA23 driver 3 diag
+nullptr			},	// PA24 USB
+nullptr			},	// PA25 USB
+nullptr			},	// PA26 not on chip
+"ate.d6.dir"	},	// PA27 driver 6 dir
+nullptr			},	// PA28 not on chip
+nullptr			},	// PA29 not on chip
+nullptr			},	// PA30 swclk/ACT LED
+nullptr			},	// PA31 swdio/STATUS LED
+"ate.d5.dir"	},	// PB00 driver 5 dir
+"out6,laser,vfd" },	// PB01 OUT6
+"out5"			},	// PB02 OUT5
+"ate.d0.dir"	},	// PB03 driver 0 dir
+nullptr			},	// PB04 VssaMon
+nullptr			},	// PB05 VrefMon
+"ate.vbus"		},	// PB06 Vbus
+"io3.in"		},	// PB07 IO3_IN
+"ate.d1.diag"	},	// PB08 driver 1 diag
+"ate.enc.sw"	},	// PB09 ENC SW
+"ate.d5.diag"	},	// PB10 driver 5 diag
+"out3"			},	// PB11 OUT3
+"io3.out"		},	// PB12 IO3_OUT
+"out2"			},	// PB13 OUT2
+nullptr			},	// PB14 CAN Tx
+nullptr			},	// PB15 CAN Rx
+"ate.cd"		},	// PB16 SD CD
+"out0"			},	// PB17 OUT0
+nullptr			},	// PB18 SD DAT0
+nullptr			},	// PB19 SD DAT1
+nullptr			},	// PB20 SD DAT2
+nullptr			},	// PB21 SD DAT3
+nullptr			},	// PB22 crystal XIN1
+nullptr			},	// PB23 crystal XOUT1
+"io0.in"		},	// PB24 IO0_IN
+"io0.out"		},	// PB25 IO0_OUT
+"out4.tach"		},	// PB26 OUT4 tacho
+"out3.tach"		},	// PB27 OUT3 tacho
+"ate.d2.dir"	},	// PB28 driver 2 dir
+"ate.d1.dir"	},	// PB29 driver 1 dir
+"io1.in"		},	// PB30 IO1_IN
+"io1.out"		},	// PB31 IO1_OUT
+"temp0"			},	// PC00 thermistor0
+"temp1"			},	// PC01 thermistor1
+"temp2"			},	// PC02 thermistor2
+"ate.vin"		},	// PC03 VIN monitor
+"io5.in"		},	// PC04 IO5_IN
+"io4.in"		},	// PC05 IO4_IN
+"spi.cs3"		},	// PC06 SPI_CS3
+"spi.cs2"		},	// PC07 SPI CS2
+nullptr			},	// PC08 not on chip
+nullptr			},	// PC09 not on chip
+"out1"			},	// PC10 OUT1
+"ate.enc.a"		},	// PC11 ENC A
+nullptr			},	// PC12 SPI MOSI
+nullptr			},	// PC13 SPI SCK
+nullptr			},	// PC14 SPI CS0 (external SD card)
+nullptr			},	// PC15 SPI_MISO
+"ate.d4.step"	},	// PC16 driver4 step
+nullptr			},	// PC17 phy reset/ESP reset
+"ate.d6.step"	},	// PC18 driver 6 step
+"ate.d3.step"	},	// PC19 driver 3 step
+nullptr			},	// PC20 Ethernet/WiFi ESP_EN
+"ate.d6.diag"	},	// PC21 driver 4 diag
+nullptr			},	// PC22 Ethernet
+nullptr			},	// PC23 Ethernet
+"ate.d2.step"	},	// PC24 driver2 step
+"ate.d1.step"	},	// PC25 driver1 step
+"ate.d0.step"	},	// PC26 driver0 step
+"ate.d6.diag"	},	// PC27 driver 6 diag
+nullptr			},	// PC28 driver ENN
+nullptr			},	// PC29 not on chip
+"ate.d5.step"	},	// PC30 driver 5 step
+"io6.in"		},	// PC31 IO6_IN
+nullptr			},	// PD00 drivers UART mux
+"ate.enc.b"		},	// PD01 ENC B
+nullptr			},	// PD02 not on chip
+nullptr			},	// PD03 not on chip
+nullptr			},	// PD04 not on chip
+nullptr			},	// PD05 not on chip
+nullptr			},	// PD06 not on chip
+nullptr			},	// PD07 not on chip
+"io2.in"		},	// PD08 IO2_IN
+"io2.out"		},	// PD09 IO2_OUT
+"io4.out,pson"	},	// PD10 IO4_OUT and PS_ON
+"spi.cs1"		},	// PD11 SPI2 CS1
+"ate.spi2.cd"	},	// PD12 SPI2_CD
+nullptr		},	// PD13 not on chip
+nullptr		},	// PD14 not on chip
+nullptr		},	// PD15 not on chip
+nullptr		},	// PD16 not on chip
+nullptr		},	// PD17 not on chip
+nullptr		},	// PD18 not on chip
+nullptr		},	// PD19 not on chip
+nullptr		},	// PD20 driver6 dir
+nullptr		},	// PD21 driver5 dir
+nullptr			},	// PA00 driver diag interrupt
+nullptr			},	// PA01 drivers ENN
+nullptr			},	// PA02 external SD card CD
+nullptr			},	// PA03 drivers diag mux out
+nullptr			},	// PA04 SBC SPI MISO
+nullptr			},	// PA05 SBC SPI SCLK
+nullptr			},	// PA06 SBC SPI SS
+nullptr			},	// PA07 SBC SPI MOSI
+nullptr			},	// PA08 Neopixel output (QSPI MOSI)
+"out3"			},	// PA09 OUT3
+"io3.in"		},	// PA10 IO3_IN
+"out4"			},	// PA11
+nullptr			},	// PA12 Ethernet/WiFi SCLK (SERCOM4.1)
+nullptr			},	// PA13 Ethernet/WiFi MISO (SERCOM4.0)
+nullptr			},	// PA14 Ethernet/WiFi SS (SERCOM4.2)
+nullptr			},	// PA15 Ethernet/WiFi MOSI (SERCOM4.3)
+nullptr			},	// PA16 Ethernet GCLK2 out/WiFi RxD (SERCOM3.1)
+nullptr			},	// PA17 Ethernet/WiFi TxD (SERCOM3.0)
+nullptr			},	// PA18 Ethernet/WiFi ESP_DATA_RDY
+nullptr			},	// PA19 Ethernet/WiFi SAM_TRANSFER_RDY
+nullptr			},	// PA20 SDHC CMD
+nullptr			},	// PA21 SDHC CLK
+nullptr			},	// PA22 12864 buzzer
+nullptr			},	// PA23 driver diag mux S0
+nullptr			},	// PA24 USB
+nullptr			},	// PA25 USB
+nullptr			},	// PA26 not on chip
+nullptr			},	// PA27 driver0 dir
+nullptr			},	// PA28 not on chip
+nullptr			},	// PA29 not on chip
+nullptr			},	// PA30 swclk/Ethernet LED Y
+nullptr			},	// PA31 swdio/diag LED
+nullptr			},	// PB00 driver4 dir
+"out6,laser,vfd" },	// PB01 OUT6
+"out5"			},	// PB02 OUT5
+nullptr			},	// PB03 driver3 dir
+nullptr			},	// PB04 VssaMon
+nullptr			},	// PB05 VrefMon
+nullptr			},	// PB06 Vbus
+nullptr			},	// PB07 SBC data rdy
+nullptr			},	// PB08 VinMon
+nullptr			},	// PB09 ENC SW
+nullptr			},	// PB10 driver diag mux S2
+"out1"			},	// PB11 OUT1
+"io3.out"		},	// PB12 IO3_OUT
+"out2"			},	// PB13 OUT2
+"io4.out"		},	// PB14 IO4_OUT
+"io4.in"		},	// PB15 IO4_IN
+nullptr			},	// PB16 SD CD
+"out0"			},	// PB17 OUT0
+nullptr			},	// PB18 SD DAT0
+nullptr			},	// PB19 SD DAT1
+nullptr			},	// PB20 SD DAT2
+nullptr			},	// PB21 SD DAT3
+nullptr			},	// PB22 crystal XIN1
+nullptr			},	// PB23 crystal XOUT1
+"io0.in"		},	// PB24 IO0_IN
+"io0.out"		},	// PB25 IO0_OUT
+"out4.tach"		},	// PB26 OUT4 tacho
+"out3.tach"		},	// PB27 OUR3 tacho
+nullptr			},	// PB28 driver 2 dir
+nullptr			},	// PB29 driver 1 dir
+"io1.in"		},	// PB30 IO1_IN
+"io1.out"		},	// PB31 IO1_OUT
+"temp0"			},	// PC00 thermistor0
+"temp1"			},	// PC01 thermistor1
+"temp2"			},	// PC02 thermistor2
+nullptr			},	// PC03 12864 A0
+"io6.in"		},	// PC04 IO6_IN
+"io5.in"		},	// PC05 IO5_IN
+"spi.cs3"		},	// PC06 SPI_CS3
+"spi.cs2"		},	// PC07 SPI CS2
+nullptr			},	// PC08 not on chip
+nullptr			},	// PC09 not on chip
+"spi.cs1"		},	// PC10 SPI CS1
+nullptr			},	// PC11 ENC A
+nullptr			},	// PC12 SPI MOSI
+nullptr			},	// PC13 SPI SCK
+nullptr			},	// PC14 SPI CS0 (external SD card)
+nullptr			},	// PC15 SPI_MISO
+nullptr			},	// PC16 driver4 step
+nullptr			},	// PC17 driver7 dir
+nullptr			},	// PC18 driver6 step
+nullptr			},	// PC19 driver7 step
+nullptr			},	// PC20 Ethernet/WiFi ESP_RST
+nullptr			},	// PC21 Ethernet PHY_RST/WiFi ESP_EN
+nullptr			},	// PC22 Ethernet
+nullptr			},	// PC23 Ethernet
+nullptr			},	// PC24 driver2 step
+nullptr			},	// PC25 driver1 step
+nullptr			},	// PC26 driver0 step
+nullptr			},	// PC27 stepper TxD (SERCOM 1.0)
+nullptr			},	// PC28 stepper RxD (SERCOM 1.1)
+nullptr			},	// PC29 not on chip
+nullptr			},	// PC30 driver5 step
+nullptr			},	// PC31 driver3 step
+nullptr			},	// PD00 drivers UART mux
+nullptr			},	// PD01 ENC B
+nullptr			},	// PD02 not on chip
+nullptr			},	// PD03 not on chip
+nullptr			},	// PD04 not on chip
+nullptr			},	// PD05 not on chip
+nullptr			},	// PD06 not on chip
+nullptr			},	// PD07 not on chip
+"io2.in"		},	// PD08 IO2_IN
+"io2.out"		},	// PD09 IO2_OUT
+"io5.out,pson"	},	// PD10 IO5_OUT and PS_ON
+nullptr			},	// PD11 drivers diag mux S1
+"io7.in"		},	// PD12
