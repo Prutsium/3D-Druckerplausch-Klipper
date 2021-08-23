@@ -16,3 +16,10 @@ Contribution is appriciated please use the issue tracker from Git and if interes
 
 This config is made of parts of my own but also scraped from various Klipper channels.
 A special thanks to Khuaong for helping with the MMU part, Q66 for some great additions and Alexz who is always assisting if i want to create some stupid macro :)
+
+Make sure you make a copy of your old klipper configuration before copying this to the klipper_config folder.
+Due i have to use some defaults for PID and Z_Offset i suggest you copy from your old config the part that say's do not edit like the following example
+'#*# <---------------------- SAVE_CONFIG ---------------------->
+#*# DO NOT EDIT THIS BLOCK OR BELOW. The contents are auto-generated.'
+
+Copy the whole block with contents and put this in the printer.cfg and run PID tuning after that for the bed and extruder.
