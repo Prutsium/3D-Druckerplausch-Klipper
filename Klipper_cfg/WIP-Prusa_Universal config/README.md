@@ -19,7 +19,7 @@ A special thanks to Khuaong for helping with the MMU part, Q66 for some great ad
 
 Make sure you make a copy of your old klipper configuration before copying this to the klipper_config folder.
 Due i have to use some defaults for PID and Z_Offset i suggest you copy from your old config the part that say's do not edit like the following example
-'#*# <---------------------- SAVE_CONFIG ---------------------->
-#*# DO NOT EDIT THIS BLOCK OR BELOW. The contents are auto-generated.'
+#*# <---------------------- SAVE_CONFIG ---------------------->
+#*# DO NOT EDIT THIS BLOCK OR BELOW. The contents are auto-generated.
 
 Copy the whole block with contents and put this in the printer.cfg and run PID tuning after that for the bed and extruder.
