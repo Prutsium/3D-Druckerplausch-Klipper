@@ -23,3 +23,5 @@ Due i have to use some defaults for PID and Z_Offset i suggest you copy from you
 #*# DO NOT EDIT THIS BLOCK OR BELOW. The contents are auto-generated.
 
 Copy the whole block with contents and put this in the printer.cfg and run PID tuning after that for the bed and extruder.
+
+Also add your MCU in mcu.cfg as then i can create update on the cfg's without overwriteing your MCU settings
