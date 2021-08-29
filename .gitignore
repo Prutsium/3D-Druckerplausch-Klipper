@@ -5,7 +5,7 @@
 
 # User-specific files
 printer.cfg
-mcu.cfg
+#mcu.cfg
 *.rsuser
 *.suo
 *.user
