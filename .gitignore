@@ -5,6 +5,8 @@
 
 # User-specific files
 printer.cfg
+resonance.cfg
+resonances.cfg
 #mcu.cfg
 *.rsuser
 *.suo
