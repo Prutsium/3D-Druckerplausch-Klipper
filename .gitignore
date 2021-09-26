@@ -8,7 +8,7 @@ printer.cfg
 resonance.cfg
 resonances.cfg
 moonraker.conf
-#mcu.cfg
+mcu.cfg
 *.rsuser
 *.suo
 *.user
