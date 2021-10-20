@@ -15,6 +15,7 @@ mcu.cfg
 *.userosscache
 *.sln.docstates
 .idea/
+webcam.txt
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
