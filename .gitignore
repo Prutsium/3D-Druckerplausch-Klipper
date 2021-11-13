@@ -5,12 +5,17 @@
 
 # User-specific files
 printer.cfg
-#mcu.cfg
+resonance.cfg
+resonances.cfg
+moonraker.conf
+mcu.cfg
 *.rsuser
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
+.idea/
+webcam.txt
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
