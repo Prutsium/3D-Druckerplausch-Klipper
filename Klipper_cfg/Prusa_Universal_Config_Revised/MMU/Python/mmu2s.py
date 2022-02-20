@@ -200,9 +200,14 @@ class Mmu2s:
 
         self.select_tool(tool)
         self.cmd_MMU_LOAD_FILAMENT_TO_FINDA(gcmd)
+        stepsize = 5
+        for i in range (0, 100, stepsize):
+            if self.finda_sensor_state():
+                self.retract(stepsize, 10*60)
+            else:
+                break
         self.retract(finda_unload, 1000)
         self.unselect_tool()
-
 
     cmd_MMU_LOAD_FILAMENT_TO_FINDA_help = "Load filament until Finda registers it"
     def cmd_MMU_LOAD_FILAMENT_TO_FINDA(self, gcmd):
@@ -216,9 +221,9 @@ class Mmu2s:
             for i in range (0, 200, stepsize):
                 if not self.finda_sensor_state():
                     self.gcode.respond_info("Loaded %s mm of filament to finda." % (i))
-                    self.extrude(stepsize, 40*60)
+                    self.extrude(stepsize, 10*60)
                 else:
-                    self.extrude(stepsize, 40*60)
+                    self.extrude(2, 10*60)
                     loaded = True
                     break
             self.gcode.run_script_from_command("G92 E0")
