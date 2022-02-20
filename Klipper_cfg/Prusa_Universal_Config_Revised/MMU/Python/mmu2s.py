@@ -41,6 +41,7 @@ class Mmu2s:
             self.gcode.register_command(method.replace("cmd_", ""), getattr(self, method), desc=getattr(self, method + "_help"))
         """
 
+        self.gcode.register_command("MMU_INSERT_FILAMENT", self.cmd_MMU_INSERT_FILAMENT, desc=self.cmd_MMU_INSERT_FILAMENT_help)
         self.gcode.register_command("MMU_LOAD_FILAMENT_TO_FINDA", self.cmd_MMU_LOAD_FILAMENT_TO_FINDA, desc=self.cmd_MMU_LOAD_FILAMENT_TO_FINDA_help)
         self.gcode.register_command("MMU_LOAD_FILAMENT_TO_EXTRUDER", self.cmd_MMU_LOAD_FILAMENT_TO_EXTRUDER, desc=self.cmd_MMU_LOAD_FILAMENT_TO_EXTRUDER_help)
         self.gcode.register_command("MMU_UNLOAD_FILAMENT_TO_FINDA", self.cmd_MMU_UNLOAD_FILAMENT_TO_FINDA, desc=self.cmd_MMU_UNLOAD_FILAMENT_TO_FINDA_help)
@@ -186,6 +187,23 @@ class Mmu2s:
 # GCode Section of the class              #
 ###########################################
 
+    cmd_MMU_INSERT_FILAMENT_help = "Insert filament into a chosen tool VALUE"
+    def cmd_MMU_INSERT_FILAMENT(self, gcmd):
+        finda_unload = self.mmu_variables.get("finda_unload_length", 25)
+        try:
+            tool = int(gcmd.get('VALUE'))
+        except ValueError:
+            self.beep_and_pause("Integer VALUE has to be entered")
+
+        if not 0 <= tool <= 4:
+            self.beep_and_pause("VALUE not between 0 and 4")
+
+        self.select_tool(tool)
+        self.cmd_MMU_LOAD_FILAMENT_TO_FINDA(gcmd)
+        self.retract(finda_unload, 1000)
+        self.unselect_tool()
+
+
     cmd_MMU_LOAD_FILAMENT_TO_FINDA_help = "Load filament until Finda registers it"
     def cmd_MMU_LOAD_FILAMENT_TO_FINDA(self, gcmd):
         stepsize = 10
@@ -277,6 +295,9 @@ class Mmu2s:
                 if self.ir_sensor_state():
                     self.gcode.respond_info("Unloading filament from extruder to FINDA ...")
                     self.retract(bowden_length*0.85, 3000)
+                else:
+                    self.retract(bowden_length*0.85, 3000)
+                    #todo make this great again
                     
                 if self.finda_sensor_state():
                     self.gcode.respond_info("Unloading filament from FINDA ...")
